@@ -28,7 +28,7 @@ desired version and linkage to these features could be broken.
 #### The solution
 
 jIsland easily solves this problem by utilizing jQuery's built in $.noConflict() method that relinquishes
-the globally scoped vars 'jQuery' and '$' back to their previous defintions.
+the globally scoped vars 'jQuery' and '$' back to their previous definitions.
 
 Read about how this works here: http://api.jquery.com/jQuery.noConflict/
 
