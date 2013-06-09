@@ -1,7 +1,7 @@
 jIsland
 =======
 
-#### What are jIslands ?
+#### The problem
 
 If you find yourself writing scripts for third party sites you may have come accross instances were the version of 
 jQuery that your script relies on is incompatible with the globally loaded version on the site.
