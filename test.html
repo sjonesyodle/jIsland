@@ -7,7 +7,7 @@
 <body>
 
 
-<span>Global Version of jQuery Running : </span> <span class="version"></span>
+<span>Global Version of jQuery @ window.jQuery and window.$ : </span> <span class="version"></span>
 <br />
 <a class="checkGlobalVersion" href="#">Check</a>
 
@@ -18,9 +18,9 @@
 <script>
 	
 	// Check version of jQuery located at window.$ and window.jQuery 
-	$(".checkGlobalVersion")
+	window.$(".checkGlobalVersion")
 	.click(function(e){
-		window.$(".version").text( jQuery().jquery );
+		window.$(".version").text( window.jQuery().jquery === window.$().jquery ? window.$().jquery : "" ); //explicit check
 		e.preventDefault();
 	});
 
