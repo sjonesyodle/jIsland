@@ -21,17 +21,14 @@ The version loaded last will assign (redefine) those global vars to it's own ver
         console.log( window.jQuery ); // -> 1.9.1
     </script>
     
-This is problematic because the third party code may reference library features absent from your own desired version and linkage to these features to can easily be broken.
+This is problematic because the third party code may reference library features absent from your 
+own desired version and linkage to these features to can easily be broken.
 
+jIsland easily solves this problem by utilizing jQuery's built in $.noConflict() method that relinquishes
+the globally scoped vars 'jQuery' and '$' back to their previous defintions.
 
-This task is easily achieved with the jQuery's built in $.noConflict() method that restores the globally scoped
-vars 'jQuery' and '$' back to their original defintions.
 
 Read about how this works here: http://api.jquery.com/jQuery.noConflict/
 
 
-
-    function () {
-    
-    }
 
