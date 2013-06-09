@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jIsland</title>
+</head>
+<body>
+
+
+<span>Global Version of jQuery Running : </span> <span class="version"></span>
+<br />
+<a class="checkGlobalVersion" href="#">Check</a>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="jIsland.js"></script>
+
+<script>
+	
+	// Check version of jQuery located at window.$ and window.jQuery 
+	$(".checkGlobalVersion")
+	.click(function(e){
+		window.$(".version").text( jQuery().jquery );
+		e.preventDefault();
+	});
+
+	function logVersion ( $ ) {
+		console.log( $().jquery );
+	}
+
+
+	jIsland("1.9.1", function ( $ ) {
+		logVersion( $ );
+	});
+
+	jIsland("1.7.1", function ( $ ) {
+		logVersion( $ );
+	});
+
+	jIsland("1.6.2", function ( $ ) {
+		logVersion( $ );
+	});
+
+
+	// You can have separate islands that reference the same version of jQuery.
+	// jIsland will cache each new version and use references if the same version is requested again.
+	// View the live html to see that 1.9.1 and 1.8.1 were only loaded once each.
+	jIsland("1.9.1", function ( $ ) {
+		logVersion( $ );
+	});
+
+	jIsland("1.8.1", function ( $ ) {
+		logVersion( $ );
+	});
+
+	jIsland("1.8.1", function ( $ ) {
+		logVersion( $ );
+	});
+
+</script>	
+	
+</body>
+</html>
