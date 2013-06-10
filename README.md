@@ -41,4 +41,4 @@ Simply load in window.jIsland and use like so:
 The '$' is now safe to use within the scope of the anonymous function. This closure is where you may decide to place your
 work.
 
-View test.html to further understand jIsland and how it caches versions of jQuery for use with mulitple islands.
+View [test.html](https://github.com/sjonesyodle/jIsland/blob/master/test.html) to further understand jIsland and how it caches versions of jQuery for use with mulitple islands.
