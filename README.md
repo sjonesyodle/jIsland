@@ -41,4 +41,36 @@ Simply load in window.jIsland and use like so:
 The '$' is now safe to use within the scope of the anonymous function. This closure is where you may decide to place your
 work.
 
+You can easily store references to islands:
+
+    var islands = {
+    
+       oahu : jIsland("1.8.1"),
+   
+       mauai : jIsland("1.9.1"),
+   
+       kauai : jIsland("1.10.1")
+    
+    };
+
+
+    islands.oahu(function( $ ){
+        console.log( $().jquery ); // 1.8.1
+    });
+
+    islands.mauai(function( $ ){
+        console.log( $().jquery ); // 1.9.1
+    });
+
+    islands.kauai(function( $ ){
+        console.log( $().jquery ); // 1.10.1
+    });
+
+    // or..
+    // invoke globally
+    jIsland("1.10.1", function ( $ ) {
+        console.log( jIsland.islands );
+        console.log( $().jquery );
+    });
+
 View [test.html](https://github.com/sjonesyodle/jIsland/blob/master/test.html) to further understand jIsland and how it caches versions of jQuery for use with mulitple islands.
