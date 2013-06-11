@@ -11,7 +11,9 @@
             script.src = uri;
 
             cb = function () {
-                if (typeof callback === "function") callback()
+                if (typeof callback === "function") {
+                    callback();
+                }
             };
 
             if (script.readyState) { //IE
@@ -21,7 +23,9 @@
                         cb();
                     }
                 };
-            } else script.onload = cb;
+            } else {
+                script.onload = cb;
+            }
 
             document.getElementsByTagName("head")[0].appendChild(script);
         },
