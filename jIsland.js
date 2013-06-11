@@ -53,19 +53,27 @@
         goog_cdn_jquery = "http://ajax.googleapis.com/ajax/libs/jquery/" + ver_tmpl + "/jquery.min.js";
 
     jIsland = function (version, cb) {
-        if (!cb || typeof cb !== "function") return;
 
-        if (version in queue) {
-            wait(cb, version);
+        if (typeof cb === "function") {
+
+            if (version in queue) {
+                wait(cb, version);
+                return;
+            }
+
+            if (version in _islands) {
+                cb(_islands[version])
+                return;
+            }
+
+            loadIsland(version, cb);
             return;
         }
 
-        if (version in _islands) {
-            cb(_islands[version])
-            return;
-        }
+        return function (func) {
+            jIsland(version, func);
+        };
 
-        loadIsland(version, cb)
     };
 
     jIsland.islands = _islands;
